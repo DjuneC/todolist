@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react'
 
-import {v4 as uuidv4} from 'uuid';
-
 import './App.css'
 
 import TodoListForm from './components/TodoListForm'
 import ShowTodos from './components/ShowTodos';
+
+import generateID from './utils/GenerateID';
+
 
 function App() {
   const [title, setTitle] = useState('')
@@ -28,7 +29,20 @@ function App() {
       alert('You should input a value')
     }
     else{
-      setTodos(prev => ([{}]))
+      const idGenerated = generateID()
+      const isIdExisted = todos.some(todo => todo.id === idGenerated)
+
+      if(!isIdExisted){
+        setTodos(prev => {
+          return [
+            {id: idGenerated, title},
+            ...prev
+          ]
+        })
+      }
+      else{
+        alert('Id already existed')
+      }
     }
     setTitle('')
   }

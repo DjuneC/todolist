@@ -1,7 +1,7 @@
 const ShowTodos = ({ todos, onDeleteTodo }) => {
 
     return (
-        <div>
+        <div className="Show">
             <ul>
                 {todos &&
                     todos.map((todo) => (

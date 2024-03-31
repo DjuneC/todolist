@@ -45,6 +45,10 @@ body {
   padding-top: 1rem;
 }
 
+.Main .Show {
+  width: 100%;
+}
+
 .Main ul {
   list-style-type: none;
 
@@ -54,11 +58,19 @@ body {
   font-size: 1.4rem;
 
   margin: 2rem 0;
+  /* background-color: aqua; */
+}
+
+.Main ul li {
+  display: flex;
+  justify-content: space-around;
 }
 
 .Main input[type="text"] {
   width: 20rem;
+  font-size: 1rem;
 }
+
 .Main input[type="text"],
 .Main input[type="submit"] {
   padding: 1rem;

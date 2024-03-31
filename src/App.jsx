@@ -53,10 +53,10 @@ function App() {
   }
 
   return (
-    <>
+    <div className='Main'>
       <TodoListForm onChange={handleInputChange} onSubmit={handleSubmit} currentValue={title}/>
-      <ShowTodos todos={todos} onDeleteTodo={handleDeleteTodo} />
-    </>
+      <ShowTodos todos={todos} onDeleteTodo={handleDeleteTodo}/>
+    </div>
   )
 }
 

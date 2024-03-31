@@ -5,7 +5,9 @@ const ShowTodos = ({ todos, onDeleteTodo }) => {
             <ul>
                 {todos &&
                     todos.map((todo) => (
-                        <li key={todo.id}>{todo.title}<button onClick={() => onDeleteTodo(todo.id)}>X</button>
+                        <li key={todo.id}>{todo.title}
+                        <button onClick={() => onDeleteTodo(todo.id)}>X</button>
+
                     </li>
                     ))
                 }

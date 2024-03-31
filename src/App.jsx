@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import './App.css'
 
@@ -47,10 +47,15 @@ function App() {
     setTitle('')
   }
 
+  const handleDeleteTodo = (idOfTodoToRemove) => {
+    const newTodos = todos.filter(todo => todo.id !== idOfTodoToRemove)
+    return setTodos(newTodos)
+  }
+
   return (
     <>
       <TodoListForm onChange={handleInputChange} onSubmit={handleSubmit} currentValue={title}/>
-      <ShowTodos todos={todos}/>
+      <ShowTodos todos={todos} onDeleteTodo={handleDeleteTodo} />
     </>
   )
 }
